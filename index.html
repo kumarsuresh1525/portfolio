@@ -3,401 +3,1459 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Suresh Kumar | Portfolio</title>
+    <title>Suresh Kumar | AI-Driven Sr. Principal Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
       :root {
-        --primary-color: #08233b;
-        --accent-color: #08233b;
-        --background-color: #ffffff;
-        --text-color: #333333;
-        --font-family: "Roboto", sans-serif;
+        --primary: #6366f1;
+        --secondary: #8b5cf6;
+        --accent: #06b6d4;
+        --success: #10b981;
+        --warning: #f59e0b;
+        --error: #ef4444;
+        --dark: #0f172a;
+        --darker: #020617;
+        --light: #f8fafc;
+        --gray: #64748b;
+        --border: rgba(148, 163, 184, 0.2);
+        --glass: rgba(255, 255, 255, 0.1);
+        --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        --glow: 0 0 20px rgba(99, 102, 241, 0.4);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
       body {
-        margin: 0;
-        font-family: var(--font-family);
-        background-color: var(--background-color);
-        color: var(--text-color);
-        scroll-behavior: smooth;
+        font-family: 'Inter', sans-serif;
+        background: var(--darker);
+        color: var(--light);
+        overflow-x: hidden;
+        line-height: 1.6;
       }
 
-      header {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: var(--primary-color);
-        color: white;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      header::before {
-        content: "";
-        position: absolute;
+      /* Advanced background with neural network animation */
+      .neural-bg {
+        position: fixed;
         top: 0;
         left: 0;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.1),
-          rgba(255, 255, 255, 0)
-        );
-        animation: backgroundAnimation 15s infinite linear;
-        transform-origin: center;
-        z-index: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        background: radial-gradient(ellipse at center, #1e293b 0%, #020617 100%);
       }
 
-      @keyframes backgroundAnimation {
-        0% {
-          transform: scale(1) rotate(0deg);
-        }
-        50% {
-          transform: scale(1.2) rotate(180deg);
-        }
-        100% {
-          transform: scale(1) rotate(360deg);
-        }
-      }
-
-      header h1 {
-        font-size: 4rem;
-        margin: 0;
-        z-index: 1;
-      }
-
-      header p {
-        font-size: 1.2rem;
-        margin: 10px 0 30px;
-        z-index: 1;
-      }
-
-      header a {
-        text-decoration: none;
-        padding: 10px 30px;
-        background-color: var(--accent-color);
-        color: white;
-        font-weight: bold;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-        z-index: 1;
-      }
-
-      header a:hover {
-        background-color: #08233b;
-      }
-
-      .social-links {
-        display: flex;
-        gap: 20px;
+      .neural-network {
         position: absolute;
-        bottom: 20px;
-        z-index: 1;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
       }
 
-      /* .social-links a {
+      .neural-node {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: var(--primary);
+        border-radius: 50%;
+        animation: pulse 3s ease-in-out infinite;
+      }
+
+      .neural-connection {
+        position: absolute;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        animation: flow 4s linear infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 0.3; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.5); box-shadow: var(--glow); }
+      }
+
+      @keyframes flow {
+        0% { opacity: 0; transform: scaleX(0); }
+        50% { opacity: 1; transform: scaleX(1); }
+        100% { opacity: 0; transform: scaleX(0); }
+      }
+
+      /* Futuristic Header */
+      header {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.6));
+        backdrop-filter: blur(20px);
+      }
+
+      .hero-container {
+        max-width: 1400px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        padding: 2rem;
+      }
+
+      .hero-content {
+        animation: slideInLeft 1s ease-out;
+      }
+
+      .hero-terminal {
+        background: rgba(15, 23, 42, 0.9);
+        border-radius: 16px;
+        border: 1px solid var(--border);
+        backdrop-filter: blur(20px);
+        box-shadow: var(--shadow);
+        animation: slideInRight 1s ease-out;
+      }
+
+      @keyframes slideInLeft {
+        from { opacity: 0; transform: translateX(-50px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+
+      @keyframes slideInRight {
+        from { opacity: 0; transform: translateX(50px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+
+      .glitch-text {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 700;
+        background: linear-gradient(45deg, #6366f1, #8b5cf6, #06b6d4, #10b981);
+        background-size: 400% 400%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradientShift 3s ease infinite, glitch 4s infinite;
+        margin-bottom: 1rem;
+      }
+
+      @keyframes gradientShift {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+      }
+
+      @keyframes glitch {
+        0%, 90%, 100% { transform: translateX(0); }
+        92% { transform: translateX(-2px); }
+        94% { transform: translateX(2px); }
+        96% { transform: translateX(-1px); }
+      }
+
+      .typing-text {
+        font-size: 1.4rem;
+        color: var(--accent);
+        font-family: 'Fira Code', monospace;
+        margin-bottom: 2rem;
+      }
+
+      .cursor {
+        opacity: 1;
+        animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+        0%, 50% { opacity: 1; }
+        51%, 100% { opacity: 0; }
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+
+      .stat-card {
+        background: var(--glass);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--glow);
+      }
+
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary);
+        display: block;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: var(--gray);
+        margin-top: 0.5rem;
+      }
+
+      /* Terminal Interface */
+      .terminal-header {
+        background: #1e293b;
+        padding: 1rem;
+        border-radius: 16px 16px 0 0;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .terminal-btn {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+
+      .terminal-btn.close { background: #ef4444; }
+      .terminal-btn.minimize { background: #f59e0b; }
+      .terminal-btn.maximize { background: #10b981; }
+
+      .terminal-title {
+        margin-left: 1rem;
+        font-family: 'Fira Code', monospace;
+        font-size: 0.9rem;
+        color: var(--gray);
+      }
+
+      .terminal-body {
+        padding: 2rem;
+        font-family: 'Fira Code', monospace;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        height: 400px;
+        overflow-y: auto;
+      }
+
+      .terminal-line {
+        margin-bottom: 0.5rem;
+        animation: typeIn 0.5s ease;
+      }
+
+      .terminal-prompt {
+        color: var(--success);
+      }
+
+      .terminal-command {
+        color: var(--accent);
+      }
+
+      .terminal-output {
+        color: var(--light);
+        margin-left: 2rem;
+      }
+
+      .terminal-error {
+        color: var(--error);
+      }
+
+      @keyframes typeIn {
+        from { opacity: 0; transform: translateX(-10px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+
+      /* AI Chat Interface */
+      .ai-chat {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 400px;
+        height: 500px;
+        background: rgba(15, 23, 42, 0.95);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        backdrop-filter: blur(20px);
+        box-shadow: var(--shadow);
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        transform: translateY(100%);
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .ai-chat.open {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .chat-header {
+        padding: 1rem;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .chat-title {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 600;
+      }
+
+      .ai-indicator {
+        width: 8px;
+        height: 8px;
+        background: var(--success);
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+      }
+
+      .chat-messages {
+        flex: 1;
+        padding: 1rem;
+        overflow-y: auto;
+      }
+
+      .message {
+        margin-bottom: 1rem;
+        animation: fadeInUp 0.3s ease;
+      }
+
+      .message.ai {
+        text-align: left;
+      }
+
+      .message.user {
+        text-align: right;
+      }
+
+      .message-bubble {
+        display: inline-block;
+        padding: 0.75rem 1rem;
+        border-radius: 12px;
+        max-width: 80%;
+        font-size: 0.9rem;
+      }
+
+      .message.ai .message-bubble {
+        background: var(--glass);
+        border: 1px solid var(--border);
+      }
+
+      .message.user .message-bubble {
+        background: var(--primary);
+        color: white;
+      }
+
+      .chat-input {
+        padding: 1rem;
+        border-top: 1px solid var(--border);
+      }
+
+      .input-group {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .input-group input {
+        flex: 1;
+        background: var(--glass);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 0.75rem;
+        color: var(--light);
+        font-size: 0.9rem;
+      }
+
+      .input-group input:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+      }
+
+      .send-btn {
+        background: var(--primary);
+        border: none;
+        border-radius: 8px;
+        padding: 0.75rem;
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .send-btn:hover {
+        background: var(--secondary);
+        transform: translateY(-1px);
+      }
+
+      .chat-toggle {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 60px;
+        height: 60px;
+        background: var(--primary);
+        border: none;
+        border-radius: 50%;
         color: white;
         font-size: 1.5rem;
-        text-decoration: none;
-        transition: color 0.3s;
-      } */
-
-      nav {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        padding: 15px;
-        background-color: var(--primary-color);
-        position: sticky;
-        top: 0;
-        z-index: 10;
+        cursor: pointer;
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+        z-index: 1001;
       }
 
-      nav a {
-        text-decoration: none;
-        color: white;
-        font-weight: 600;
-        padding: 10px 15px;
-        border-radius: 5px;
-        transition: background-color 0.3s, transform 0.3s;
-      }
-
-      nav a:hover {
-        background-color: var(--accent-color);
+      .chat-toggle:hover {
         transform: scale(1.1);
+        box-shadow: var(--glow);
+      }
+
+      /* Navigation */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(15, 23, 42, 0.9);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border);
+        z-index: 999;
+        padding: 1rem 0;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+      }
+
+      nav.visible {
+        transform: translateY(0);
+      }
+
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+      }
+
+      .nav-logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        font-family: 'Fira Code', monospace;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: var(--light);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--primary);
+        background: var(--glass);
+      }
+
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        width: 80%;
+      }
+
+      /* Main Content */
+      main {
+        background: linear-gradient(180deg, transparent, rgba(15, 23, 42, 0.5));
       }
 
       section {
-        max-width: 900px;
-        margin: 40px auto;
-        padding: 20px;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        scroll-margin-top: 80px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 5rem 2rem;
+        position: relative;
       }
 
-      section h2 {
-        color: var(--accent-color);
-        font-size: 2rem;
-        margin-bottom: 15px;
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
       }
 
-      .projects {
+      .section-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: linear-gradient(45deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .section-subtitle {
+        font-size: 1.2rem;
+        color: var(--gray);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Cards */
+      .card {
+        background: var(--glass);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 2rem;
+        backdrop-filter: blur(20px);
+        transition: all 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow);
+        border-color: var(--primary);
+      }
+
+      /* Architecture Visualizer */
+      .arch-visualizer {
+        background: var(--darker);
+        border-radius: 16px;
+        padding: 2rem;
+        margin: 2rem 0;
+        border: 1px solid var(--border);
+      }
+
+      .arch-diagram {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+
+      .arch-component {
+        background: var(--glass);
+        border: 2px solid var(--border);
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .arch-component:hover {
+        border-color: var(--primary);
+        transform: scale(1.05);
+        box-shadow: var(--glow);
+      }
+
+      .arch-component::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -2rem;
+        width: 2rem;
+        height: 2px;
+        background: var(--accent);
+        display: none;
+      }
+
+      .arch-component:not(:last-child)::after {
+        display: block;
+      }
+
+      /* Skills Matrix */
+      .skills-matrix {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
+        gap: 2rem;
       }
 
-      .project {
-        padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        transition: transform 0.3s;
+      .skill-category {
+        background: var(--glass);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 2rem;
+        backdrop-filter: blur(20px);
       }
 
-      .project:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      .skill-category h3 {
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
       }
 
-      footer {
-        text-align: center;
-        padding: 20px;
-        background-color: var(--primary-color);
+      .skill-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .skill-tag {
+        background: linear-gradient(45deg, var(--primary), var(--secondary));
         color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        cursor: pointer;
       }
 
-      footer a {
-        color: var(--accent-color);
-        text-decoration: none;
+      .skill-tag:hover {
+        transform: scale(1.1);
+        box-shadow: var(--glow);
       }
 
-      footer a:hover {
-        text-decoration: underline;
+      /* Experience Timeline */
+      .timeline {
+        position: relative;
+        padding: 2rem 0;
+      }
+
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(180deg, var(--primary), var(--secondary));
+        transform: translateX(-50%);
+      }
+
+      .timeline-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 4rem;
+        position: relative;
+      }
+
+      .timeline-item:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .timeline-content {
+        background: var(--glass);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 2rem;
+        width: 45%;
+        backdrop-filter: blur(20px);
+        transition: all 0.3s ease;
+      }
+
+      .timeline-content:hover {
+        transform: scale(1.05);
+        box-shadow: var(--shadow);
+      }
+
+      .timeline-marker {
+        position: absolute;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        background: var(--primary);
+        border: 4px solid var(--darker);
+        border-radius: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        animation: pulse 2s infinite;
+      }
+
+      .timeline-date {
+        background: var(--primary);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        display: inline-block;
+        margin-bottom: 1rem;
+      }
+
+      /* Code Playground */
+      .code-playground {
+        background: var(--darker);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+        margin: 2rem 0;
+      }
+
+      .code-tabs {
+        display: flex;
+        background: #1e293b;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .code-tab {
+        padding: 1rem 2rem;
+        background: transparent;
+        border: none;
+        color: var(--gray);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-bottom: 2px solid transparent;
+      }
+
+      .code-tab.active {
+        color: var(--primary);
+        border-bottom-color: var(--primary);
+      }
+
+      .code-content {
+        padding: 2rem;
+        font-family: 'Fira Code', monospace;
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      .code-line {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .line-number {
+        color: var(--gray);
+        margin-right: 2rem;
+        min-width: 2rem;
+        text-align: right;
+      }
+
+      .code-text {
+        color: var(--light);
+      }
+
+      .keyword { color: #c678dd; }
+      .string { color: #98c379; }
+      .function { color: #61afef; }
+      .comment { color: var(--gray); font-style: italic; }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero-container {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .ai-chat {
+          width: calc(100vw - 2rem);
+          height: 400px;
+          bottom: 1rem;
+          right: 1rem;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .timeline::before {
+          left: 2rem;
+        }
+
+        .timeline-item {
+          flex-direction: column;
+          align-items: flex-start;
+          padding-left: 4rem;
+        }
+
+        .timeline-content {
+          width: 100%;
+        }
+
+        .timeline-marker {
+          left: 2rem;
+        }
+      }
+
+      /* Animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1>Suresh Kumar</h1>
-      <p>
-        Principal Engineer | 12+ Years of Experience in Full-Stack Development
-      </p>
-      <a href="#about">Learn More</a>
+    <div class="neural-bg">
+      <div class="neural-network" id="neuralNetwork"></div>
+    </div>
 
-      <div class="social-links">
-        <a
-          href="https://github.com/kumarsuresh1525"
-          target="_blank"
-          title="GitHub"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            aria-hidden="true"
-            role="img"
-            class="iconify iconify--hugeicons"
-            width="1em"
-            height="1em"
-            viewBox="0 0 24 24"
-          >
-            <g
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.5"
-              color="currentColor"
-            >
-              <path d="M10 20.568c-3.429 1.157-6.286 0-8-3.568"></path>
-              <path
-                d="M10 22v-3.242c0-.598.184-1.118.48-1.588c.204-.322.064-.78-.303-.88C7.134 15.452 5 14.107 5 9.645c0-1.16.38-2.25 1.048-3.2c.166-.236.25-.354.27-.46c.02-.108-.015-.247-.085-.527c-.283-1.136-.264-2.343.16-3.43c0 0 .877-.287 2.874.96c.456.285.684.428.885.46s.469-.035 1.005-.169A9.5 9.5 0 0 1 13.5 3a9.6 9.6 0 0 1 2.343.28c.536.134.805.2 1.006.169c.2-.032.428-.175.884-.46c1.997-1.247 2.874-.96 2.874-.96c.424 1.087.443 2.294.16 3.43c-.07.28-.104.42-.084.526s.103.225.269.461c.668.95 1.048 2.04 1.048 3.2c0 4.462-2.134 5.807-5.177 6.643c-.367.101-.507.559-.303.88c.296.47.48.99.48 1.589V22"
-              ></path>
-            </g>
-          </svg>
-        </a>
-        <a href="https://x.com/sureshk37441300?s=11" target="_blank" title="X">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            aria-hidden="true"
-            role="img"
-            class="iconify iconify--akar-icons"
-            width="1em"
-            height="1em"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="currentColor"
-              d="M13.808 10.469L20.88 2h-1.676l-6.142 7.353L8.158 2H2.5l7.418 11.12L2.5 22h1.676l6.486-7.765L15.842 22H21.5zm-2.296 2.748l-.752-1.107L4.78 3.3h2.575l4.826 7.11l.751 1.107l6.273 9.242h-2.574z"
-            ></path>
-          </svg>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/suresh-kumar-455a6027/"
-          target="_blank"
-          title="LinkedIn"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            aria-hidden="true"
-            role="img"
-            class="iconify iconify--hugeicons"
-            width="1em"
-            height="1em"
-            viewBox="0 0 24 24"
-          >
-            <g
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.5"
-              color="currentColor"
-            >
-              <path
-                d="M7 10v7m4-4v4m0-4a3 3 0 1 1 6 0v4m-6-4v-3M7.008 7h-.009"
-              ></path>
-              <path
-                d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12"
-              ></path>
-            </g>
-          </svg>
-        </a>
+    <nav id="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">SK.dev</div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header id="home">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="glitch-text">Suresh Kumar</h1>
+          <div class="typing-text">
+            <span id="typingText">Sr. Principal Engineer</span>
+            <span class="cursor">|</span>
+          </div>
+          <p style="font-size: 1.2rem; color: var(--gray); margin-bottom: 2rem;">
+            AI-Driven Frontend Architecture & Team Leadership Expert
+          </p>
+          
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-number">12+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">8+</span>
+              <span class="stat-label">Team Members Led</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">1.5M+</span>
+              <span class="stat-label">URLs Optimized</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+            <a href="#projects" style="background: linear-gradient(45deg, var(--primary), var(--secondary)); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+              View Projects
+            </a>
+            <a href="https://drive.google.com/file/d/1M-Xgrufl-AgeE9GOJLyyZyrOOuNyKr1i/view?usp=drive_link" target="_blank" style="border: 2px solid var(--primary); color: var(--primary); padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+              Download Resume
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-terminal">
+          <div class="terminal-header">
+            <div class="terminal-btn close"></div>
+            <div class="terminal-btn minimize"></div>
+            <div class="terminal-btn maximize"></div>
+            <div class="terminal-title">suresh@principal-engineer:~$</div>
+          </div>
+          <div class="terminal-body" id="terminalBody">
+            <div class="terminal-line">
+              <span class="terminal-prompt">suresh@dev:~$</span>
+              <span class="terminal-command"> whoami</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-output">Sr. Principal Engineer | AI & Frontend Expert</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-prompt">suresh@dev:~$</span>
+              <span class="terminal-command"> cat experience.txt</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-output">• Led teams of 8+ engineers across multiple startups</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-output">• Built AI-powered observability platforms</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-output">• Optimized 1.5M+ URLs for performance</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-output">• Specialized in Micro-frontend architecture</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-prompt">suresh@dev:~$</span>
+              <span class="terminal-command"> ls skills/</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-output">react.js  next.js  node.js  typescript  ai-integration</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-output">micro-frontends  team-leadership  performance-optimization</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-prompt">suresh@dev:~$</span>
+              <span class="terminal-command"> <span class="cursor">|</span></span>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
-    <nav>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="https://drive.google.com/file/d/1M-Xgrufl-AgeE9GOJLyyZyrOOuNyKr1i/view?usp=drive_link" target="_blank">Resume</a>
-    </nav>
-
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        12+ years of extensive experience in all phases of software development
-        life cycle including identification of business needs and constraints,
-        collection of requirements, architecture, design, implementation,
-        testing, deployment and maintenance
-      </p>
-    </section>
-
-    <section id="experience">
-      <h2>Experience</h2>
-      <p>
-        <strong>Principal Engineer, Carrefour</strong> (June 2023 - Present)
-      </p>
-      <ul>
-        <li>
-          Spearheaded the development of a unified codebase for 17 countries,
-          enhancing scalability and performance using Nextjs, Reactjs, Redux,
-          Typescript, New Relic, Apigee, Nodejs, Mongo, Redis, Nestjs, Java
-        </li>
-        <li>
-          Led architecture decisions, including the implementation of Micro
-          Frontends, resulting in improved modularity and flexibility.
-        </li>
-        <li>
-          Drove significant performance improvements through strategic
-          architecture enhancements and team leadership.
-        </li>
-      </ul>
-      <p><strong>Lead Engineer, Meesho</strong> (April 2022 - May 2023)</p>
-      <ul>
-        <li>
-          Enhanced web performance, optimizing 1.5M URLs and leading end-to-end
-          feature development with a focus on modern web technologies.
-        </li>
-        <li>
-          Design system creation using React, Atomic design with rollup module
-          bundler.
-        </li>
-      </ul>
-      <p>
-        <strong>Principal Engineer, Majid Al Futtaim</strong> (Feb 2021 - April
-        2022)
-      </p>
-      <ul>
-        <li>
-          Developed code in such a way that it serves the same code base to 17
-          different countries with dynamic data using Nextjs, Reactjs, Redux,
-          Typescript, CSS - pre-processors, Circle CI, New Relic, Sentry,
-          Apigee, Nodejs, Mongo, Redis, Bootstrap, Figma, Nx, and Lerna
-          workspace.
-        </li>
-        <li>Developed custom NPM packages for a design system, and hooks.</li>
-        <li>Implemented Microfrontend Architecture.</li>
-      </ul>
-      <p><strong>Senior consultant, Xebia</strong> (Feb 2018 - Sep 2020)</p>
-      <p><strong>Engineer II, Encore Capital</strong> (June 2017 - Jan 2018)</p>
-      <p>
-        <strong>Senior software developer, Tech Mahindra</strong> (Sep 2015 -
-        May 2017)
-      </p>
-      <p>
-        <strong>Software Engineer, Authentic Enginner</strong> (Nov 2011 - Sep
-        2015)
-      </p>
-    </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Programming: JavaScript, TypeScript, Node.js, java</li>
-        <li>Frameworks: React.js, Next.js, Redux, Zustand</li>
-        <li>Cloud: AWS (EC2, EKS), Docker, Kubernetes, Akamai, Cloudeflare</li>
-      </ul>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="projects">
-        <div class="project">
-          <h3>carrefouruae.com</h3>
-          <p>
-            Tech: Next.js, React.js, Redux, Zustand, tailwind-css, Akamai,
-            azure, nodejs, java
-          </p>
+    <main>
+      <section id="about" class="fade-in">
+        <div class="section-header">
+          <h2 class="section-title">AI-Powered Engineering Excellence</h2>
+          <p class="section-subtitle">Transforming complex technical challenges into scalable solutions through innovative architecture and team leadership</p>
         </div>
-        <div class="project">
-          <h3>messho.com</h3>
-          <p>
-            Tech: Nextjs, Nodejs, Reactjs, Redux, typescript, redis, cloudflare,
-            AWS
-          </p>
+
+        <div class="arch-visualizer">
+          <h3 style="color: var(--primary); margin-bottom: 2rem; text-align: center;">Micro-Frontend Architecture I Built</h3>
+          <div class="arch-diagram">
+            <div class="arch-component" onclick="showArchDetail('gateway')">
+              <h4>API Gateway</h4>
+              <p>Unified entry point for 17 countries</p>
+            </div>
+            <div class="arch-component" onclick="showArchDetail('microfrontend')">
+              <h4>Micro Frontends</h4>
+              <p>Independent deployable modules</p>
+            </div>
+            <div class="arch-component" onclick="showArchDetail('ai')">
+              <h4>AI Integration</h4>
+              <p>Real-time AI assistance & analytics</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-playground">
+          <div class="code-tabs">
+            <button class="code-tab active" onclick="showCodeTab('react')">React Component</button>
+            <button class="code-tab" onclick="showCodeTab('architecture')">Architecture</button>
+            <button class="code-tab" onclick="showCodeTab('performance')">Performance</button>
+          </div>
+          <div class="code-content">
+            <div id="react-code" class="code-tab-content">
+              <div class="code-line">
+                <span class="line-number">1</span>
+                <span class="code-text"><span class="keyword">import</span> { <span class="function">useState</span>, <span class="function">useEffect</span> } <span class="keyword">from</span> <span class="string">'react'</span>;</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">2</span>
+                <span class="code-text"><span class="keyword">import</span> { <span class="function">MicroFrontendLoader</span> } <span class="keyword">from</span> <span class="string">'@suresh/micro-frontend-core'</span>;</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">3</span>
+                <span class="code-text"></span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">4</span>
+                <span class="code-text"><span class="comment">// Advanced component I built for dynamic module loading</span></span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">5</span>
+                <span class="code-text"><span class="keyword">const</span> <span class="function">DynamicMicroFrontend</span> = ({ country, feature }) => {</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">6</span>
+                <span class="code-text">  <span class="keyword">const</span> [module, setModule] = <span class="function">useState</span>(<span class="keyword">null</span>);</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">7</span>
+                <span class="code-text">  <span class="keyword">const</span> [loading, setLoading] = <span class="function">useState</span>(<span class="keyword">true</span>);</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">8</span>
+                <span class="code-text"></span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">9</span>
+                <span class="code-text">  <span class="function">useEffect</span>(() => {</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">10</span>
+                <span class="code-text">    <span class="function">MicroFrontendLoader</span>.<span class="function">loadModule</span>(`${country}/${feature}`)</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">11</span>
+                <span class="code-text">      .<span class="function">then</span>(setModule)</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">12</span>
+                <span class="code-text">      .<span class="function">finally</span>(() => <span class="function">setLoading</span>(<span class="keyword">false</span>));</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">13</span>
+                <span class="code-text">  }, [country, feature]);</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">14</span>
+                <span class="code-text"></span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">15</span>
+                <span class="code-text">  <span class="keyword">return</span> loading ? <span class="string">&lt;Spinner /&gt;</span> : module;</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">16</span>
+                <span class="code-text">};</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="fade-in">
+        <div class="section-header">
+          <h2 class="section-title">Advanced Technology Stack</h2>
+          <p class="section-subtitle">Cutting-edge tools and frameworks I use to build scalable solutions</p>
+        </div>
+
+        <div class="skills-matrix">
+          <div class="skill-category">
+            <h3>🤖 AI & Machine Learning</h3>
+            <div class="skill-items">
+              <span class="skill-tag">OpenAI Integration</span>
+              <span class="skill-tag">LangChain</span>
+              <span class="skill-tag">Vector Databases</span>
+              <span class="skill-tag">AI Agents</span>
+              <span class="skill-tag">Real-time AI Chat</span>
+              <span class="skill-tag">Dynamic Dashboards</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>⚛️ Frontend Architecture</h3>
+            <div class="skill-items">
+              <span class="skill-tag">React.js</span>
+              <span class="skill-tag">Next.js</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">Micro Frontends</span>
+              <span class="skill-tag">Redux/Zustand</span>
+              <span class="skill-tag">Server Components</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>🚀 Performance Engineering</h3>
+            <div class="skill-items">
+              <span class="skill-tag">Core Web Vitals</span>
+              <span class="skill-tag">Bundle Optimization</span>
+              <span class="skill-tag">CDN Strategy</span>
+              <span class="skill-tag">Redis Caching</span>
+              <span class="skill-tag">Edge Computing</span>
+              <span class="skill-tag">Real-time Analytics</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>☁️ Cloud & DevOps</h3>
+            <div class="skill-items">
+              <span class="skill-tag">AWS (EC2, EKS)</span>
+              <span class="skill-tag">Kubernetes</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">CI/CD Pipelines</span>
+              <span class="skill-tag">Infrastructure as Code</span>
+              <span class="skill-tag">Monitoring</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>🏗️ Backend Systems</h3>
+            <div class="skill-items">
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">NestJS</span>
+              <span class="skill-tag">Go</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">GraphQL</span>
+              <span class="skill-tag">WebSocket</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>👥 Leadership & Strategy</h3>
+            <div class="skill-items">
+              <span class="skill-tag">Team Leadership</span>
+              <span class="skill-tag">Technical Strategy</span>
+              <span class="skill-tag">Mentorship</span>
+              <span class="skill-tag">Cross-functional Collaboration</span>
+              <span class="skill-tag">Agile Methodology</span>
+              <span class="skill-tag">Technical Interviews</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="fade-in">
+        <div class="section-header">
+          <h2 class="section-title">Professional Journey</h2>
+          <p class="section-subtitle">Leading innovation across top-tier technology companies</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">March 2025 - Present</div>
+              <h3 style="color: var(--primary); margin-bottom: 1rem;">Sr. Principal Engineer - Ciroa.ai</h3>
+              <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 0.5rem;">🚀 Led architecture of AI-powered observability platform from 0 to 1</li>
+                <li style="margin-bottom: 0.5rem;">🤖 Built AI agents for dynamic dashboard generation with OpenAI</li>
+                <li style="margin-bottom: 0.5rem;">⚡ Implemented real-time WebSocket communication with NestJS</li>
+                <li style="margin-bottom: 0.5rem;">📊 Created custom design system and vector database integration</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">June 2023 - Jan 2025</div>
+              <h3 style="color: var(--primary); margin-bottom: 1rem;">Principal Engineer - Carrefour</h3>
+              <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 0.5rem;">🌍 Unified codebase for 17 countries with 30% performance improvement</li>
+                <li style="margin-bottom: 0.5rem;">🏗️ Led micro-frontend architecture implementation</li>
+                <li style="margin-bottom: 0.5rem;">🔍 Integrated AI-powered product search with real-time responses</li>
+                <li style="margin-bottom: 0.5rem;">👥 Led strategic architecture decisions and team leadership</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">April 2022 - May 2023</div>
+              <h3 style="color: var(--primary); margin-bottom: 1rem;">Lead Engineer - Meesho</h3>
+              <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 0.5rem;">⚡ Reduced page load time by 40% across 1.5M+ URLs</li>
+                <li style="margin-bottom: 0.5rem;">🎯 Led successful JavaScript to TypeScript migration</li>
+                <li style="margin-bottom: 0.5rem;">💰 Reduced server costs through environment consolidation</li>
+                <li style="margin-bottom: 0.5rem;">📱 Created WebViews for Android experimentation</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">Feb 2021 - April 2022</div>
+              <h3 style="color: var(--primary); margin-bottom: 1rem;">Principal Engineer - Majid Al Futtaim</h3>
+              <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 0.5rem;">🌐 Developed unified codebase serving 17 countries</li>
+                <li style="margin-bottom: 0.5rem;">🏗️ Implemented micro-frontend architecture</li>
+                <li style="margin-bottom: 0.5rem;">📦 Created custom NPM packages for design system</li>
+                <li style="margin-bottom: 0.5rem;">⚡ Drove significant performance improvements</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="fade-in">
+        <div class="section-header">
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">Innovative solutions that drive business impact</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+          <div class="card" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));">
+            <h3 style="color: var(--primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+              🤖 AI Observability Platform
+            </h3>
+            <p style="margin-bottom: 1.5rem; color: var(--gray);">
+              Built from scratch at Ciroa.ai - Real-time AI-powered observability with dynamic dashboards, 
+              OpenAI integration, and vector database support.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+              <span style="background: var(--primary); color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">React.js</span>
+              <span style="background: var(--primary); color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">OpenAI</span>
+              <span style="background: var(--primary); color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">LangChain</span>
+              <span style="background: var(--primary); color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">Vector DB</span>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+              <span style="color: var(--success);">🚀 0 to 1 Build</span>
+              <span style="color: var(--accent);">🤖 AI-Powered</span>
+            </div>
+          </div>
+
+          <div class="card" style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(16, 185, 129, 0.1));">
+            <h3 style="color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+              🌍 Global E-commerce Platform
+            </h3>
+            <p style="margin-bottom: 1.5rem; color: var(--gray);">
+              Carrefour's unified platform serving 17 countries with micro-frontend architecture, 
+              30% performance improvement, and AI-powered search.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+              <span style="background: var(--accent); color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">Next.js</span>
+              <span style="background: var(--accent); color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">Micro Frontends</span>
+              <span style="background: var(--accent); color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">TypeScript</span>
+              <span style="background: var(--accent); color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">Azure</span>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+              <span style="color: var(--success);">🌍 17 Countries</span>
+              <span style="color: var(--warning);">⚡ 30% Faster</span>
+            </div>
+          </div>
+
+          <div class="card" style="background: linear-gradient(135deg, rgba(245, 87, 108, 0.1), rgba(251, 113, 133, 0.1));">
+            <h3 style="color: #f5576c; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+              📈 Performance Optimization Engine
+            </h3>
+            <p style="margin-bottom: 1.5rem; color: var(--gray);">
+              Meesho's performance revolution - 40% page load reduction across 1.5M+ URLs, 
+              comprehensive caching strategy, and cost optimization.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+              <span style="background: #f5576c; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">Performance</span>
+              <span style="background: #f5576c; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">Redis Caching</span>
+              <span style="background: #f5576c; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">CloudFlare</span>
+              <span style="background: #f5576c; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">AWS</span>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+              <span style="color: var(--success);">📊 1.5M+ URLs</span>
+              <span style="color: var(--error);">⚡ 40% Faster</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- AI Chat Interface -->
+    <div class="ai-chat" id="aiChat">
+      <div class="chat-header">
+        <div class="chat-title">
+          <div class="ai-indicator"></div>
+          AI Assistant - Ask about Suresh
+        </div>
+        <button onclick="toggleChat()" style="background: none; border: none; color: var(--gray); cursor: pointer; font-size: 1.2rem;">&times;</button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="message ai">
+          <div class="message-bubble">
+            👋 Hi! I'm Suresh's AI assistant. Ask me anything about his experience, skills, projects, or career journey!
+          </div>
         </div>
       </div>
-    </section>
+      <div class="chat-input">
+        <div class="input-group">
+          <input type="text" id="chatInput" placeholder="Ask about Suresh's experience..." onkeypress="handleChatKeyPress(event)">
+          <button class="send-btn" onclick="sendMessage()">Send</button>
+        </div>
+      </div>
+    </div>
 
-    <!-- <section id="contact">
-      <h2>Contact Me</h2>
-      <form>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required />
+    <button class="chat-toggle" id="chatToggle" onclick="toggleChat()">🤖</button>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
+    <script>
+      // Neural network animation
+      function createNeuralNetwork() {
+        const network = document.getElementById('neuralNetwork');
+        const nodes = 30;
+        const connections = 20;
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+        // Create nodes
+        for (let i = 0; i < nodes; i++) {
+          const node = document.createElement('div');
+          node.className = 'neural-node';
+          node.style.left = Math.random() * 100 + '%';
+          node.style.top = Math.random() * 100 + '%';
+          node.style.animationDelay = Math.random() * 3 + 's';
+          network.appendChild(node);
+        }
 
-        <button type="submit">Send</button>
-      </form>
-    </section> -->
+        // Create connections
+        for (let i = 0; i < connections; i++) {
+          const connection = document.createElement('div');
+          connection.className = 'neural-connection';
+          connection.style.left = Math.random() * 100 + '%';
+          connection.style.top = Math.random() * 100 + '%';
+          connection.style.width = Math.random() * 200 + 50 + 'px';
+          connection.style.transform = `rotate(${Math.random() * 360}deg)`;
+          connection.style.animationDelay = Math.random() * 4 + 's';
+          network.appendChild(connection);
+        }
+      }
 
-    <footer>
-      <p>
-        &copy; 2025 Suresh Kumar. All rights reserved.
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
+      // Typing animation
+      function typeWriter(element, texts, speed = 100) {
+        let textIndex = 0;
+        let charIndex = 0;
+        
+        function type() {
+          if (textIndex < texts.length) {
+            if (charIndex < texts[textIndex].length) {
+              element.textContent = texts[textIndex].substring(0, charIndex + 1);
+              charIndex++;
+              setTimeout(type, speed);
+            } else {
+              setTimeout(() => {
+                charIndex = 0;
+                textIndex = (textIndex + 1) % texts.length;
+                setTimeout(type, speed);
+              }, 2000);
+            }
+          }
+        }
+        
+        type();
+      }
+
+      // Chat functionality
+      let chatOpen = false;
+
+      function toggleChat() {
+        const chat = document.getElementById('aiChat');
+        const toggle = document.getElementById('chatToggle');
+        
+        chatOpen = !chatOpen;
+        
+        if (chatOpen) {
+          chat.classList.add('open');
+          toggle.style.display = 'none';
+        } else {
+          chat.classList.remove('open');
+          toggle.style.display = 'block';
+        }
+      }
+
+      function sendMessage() {
+        const input = document.getElementById('chatInput');
+        const message = input.value.trim();
+        
+        if (message) {
+          addMessage(message, 'user');
+          input.value = '';
+          
+          // Simulate AI response
+          setTimeout(() => {
+            const response = generateAIResponse(message);
+            addMessage(response, 'ai');
+          }, 1000);
+        }
+      }
+
+      function addMessage(text, sender) {
+        const messages = document.getElementById('chatMessages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${sender}`;
+        
+        const bubble = document.createElement('div');
+        bubble.className = 'message-bubble';
+        bubble.textContent = text;
+        
+        messageDiv.appendChild(bubble);
+        messages.appendChild(messageDiv);
+        messages.scrollTop = messages.scrollHeight;
+      }
+
+      function generateAIResponse(message) {
+        const responses = {
+          experience: "Suresh has 12+ years of experience across multiple domains including AI integration, micro-frontend architecture, and team leadership. He's worked at top companies like Carrefour, Meesho, and Ciroa.ai.",
+          skills: "His core skills include React.js, Next.js, TypeScript, AI integration with OpenAI, micro-frontends, performance optimization, and leading teams of 8+ engineers.",
+          projects: "Notable projects include building an AI-powered observability platform at Ciroa.ai, optimizing 1.5M+ URLs at Meesho with 40% performance improvement, and creating unified codebases for 17 countries at Carrefour.",
+          leadership: "Suresh has led teams of 8+ engineers, mentored individuals, and driven cross-functional collaboration. He's known for creating a culture of shared knowledge and strategic architecture decisions.",
+          ai: "Suresh specializes in AI integration including OpenAI, LangChain, vector databases, real-time AI chat, and building AI-powered observability platforms with dynamic dashboard generation."
+        };
+
+        const lowerMessage = message.toLowerCase();
+        
+        if (lowerMessage.includes('experience') || lowerMessage.includes('work')) {
+          return responses.experience;
+        } else if (lowerMessage.includes('skill') || lowerMessage.includes('technology')) {
+          return responses.skills;
+        } else if (lowerMessage.includes('project') || lowerMessage.includes('built')) {
+          return responses.projects;
+        } else if (lowerMessage.includes('lead') || lowerMessage.includes('team') || lowerMessage.includes('management')) {
+          return responses.leadership;
+        } else if (lowerMessage.includes('ai') || lowerMessage.includes('artificial intelligence')) {
+          return responses.ai;
+        } else {
+          return "I can help you learn about Suresh's experience, skills, projects, leadership abilities, or AI expertise. What specific area interests you?";
+        }
+      }
+
+      function handleChatKeyPress(event) {
+        if (event.key === 'Enter') {
+          sendMessage();
+        }
+      }
+
+      // Architecture component interaction
+      function showArchDetail(component) {
+        const details = {
+          gateway: "API Gateway handles unified entry point for 17 countries with load balancing, rate limiting, and country-specific routing.",
+          microfrontend: "Micro Frontends enable independent deployment, technology diversity, and team autonomy while maintaining consistency.",
+          ai: "AI Integration provides real-time assistance, dynamic dashboards, and intelligent insights using OpenAI and vector databases."
+        };
+        
+        alert(details[component]);
+      }
+
+      // Code tab switching
+      function showCodeTab(tab) {
+        document.querySelectorAll('.code-tab').forEach(t => t.classList.remove('active'));
+        event.target.classList.add('active');
+        
+        // In a real implementation, you'd show different code examples
+        console.log(`Showing ${tab} code example`);
+      }
+
+      // Scroll animations
+      function handleScroll() {
+        const navbar = document.getElementById('navbar');
+        const scrolled = window.scrollY > 100;
+        navbar.classList.toggle('visible', scrolled);
+
+        // Fade in animations
+        document.querySelectorAll('.fade-in').forEach(element => {
+          const elementTop = element.getBoundingClientRect().top;
+          const elementVisible = 150;
+          
+          if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('visible');
+          }
+        });
+      }
+
+      // Initialize everything
+      document.addEventListener('DOMContentLoaded', function() {
+        createNeuralNetwork();
+        
+        const typingElement = document.getElementById('typingText');
+        const texts = [
+          'Sr. Principal Engineer',
+          'AI Integration Expert',
+          'Micro-Frontend Architect',
+          'Team Leadership Specialist',
+          'Performance Optimization Expert'
+        ];
+        
+        typeWriter(typingElement, texts, 100);
+        
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Initial call
+      });
+    </script>
   </body>
 </html>
